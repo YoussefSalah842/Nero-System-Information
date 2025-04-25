@@ -12,16 +12,19 @@ C:\Users\Youssef\Documents\Visual Studio 2010\Projects\Nero System Information\N
 C:\Users\Youssef\Documents\Visual Studio 2010\Projects\Nero System Information\Nero System Information\obj\x86\Debug\Nero System Information.exe
 C:\Users\Youssef\Documents\Visual Studio 2010\Projects\Nero System Information\Nero System Information\obj\x86\Debug\Nero System Information.pdb
 C:\Users\Youssef\Documents\Visual Studio 2010\Projects\Nero System Information\Nero System Information\obj\x86\Debug\Nero_System_Information.Beta_MSG.resources
-C:\Users\Youssef Salah\Documents\Visual Studio 2010\Projects\Nero System Information\Nero System Information\bin\Debug\Nero System Information.exe.config
-C:\Users\Youssef Salah\Documents\Visual Studio 2010\Projects\Nero System Information\Nero System Information\obj\x86\Debug\Interop.SHDocVw.dll
-C:\Users\Youssef Salah\Documents\Visual Studio 2010\Projects\Nero System Information\Nero System Information\obj\x86\Debug\AxInterop.SHDocVw.dll
-C:\Users\Youssef Salah\Documents\Visual Studio 2010\Projects\Nero System Information\Nero System Information\obj\x86\Debug\Nero System Information.csproj.ResolveComReference.cache
-C:\Users\Youssef Salah\Documents\Visual Studio 2010\Projects\Nero System Information\Nero System Information\obj\x86\Debug\Nero System Information.exe
-C:\Users\Youssef Salah\Documents\Visual Studio 2010\Projects\Nero System Information\Nero System Information\obj\x86\Debug\Nero System Information.pdb
-C:\Users\Youssef Salah\Documents\Visual Studio 2010\Projects\Nero System Information\Nero System Information\bin\Debug\Nero System Information.exe
-C:\Users\Youssef Salah\Documents\Visual Studio 2010\Projects\Nero System Information\Nero System Information\bin\Debug\Nero System Information.pdb
-C:\Users\Youssef Salah\Documents\Visual Studio 2010\Projects\Nero System Information\Nero System Information\bin\Debug\Interop.SHDocVw.dll
-C:\Users\Youssef Salah\Documents\Visual Studio 2010\Projects\Nero System Information\Nero System Information\bin\Debug\AxInterop.SHDocVw.dll
-C:\Users\Youssef Salah\Documents\Visual Studio 2010\Projects\Nero System Information\Nero System Information\obj\x86\Debug\Nero_System_Information.Main.resources
-C:\Users\Youssef Salah\Documents\Visual Studio 2010\Projects\Nero System Information\Nero System Information\obj\x86\Debug\Nero_System_Information.Properties.Resources.resources
-C:\Users\Youssef Salah\Documents\Visual Studio 2010\Projects\Nero System Information\Nero System Information\obj\x86\Debug\Nero System Information.csproj.GenerateResource.Cache
+C:\Users\salsh\OneDrive\Documents\Visual Studio 2015\Projects\Nero System Information\Nero System Information\bin\Debug\Nero System Information.exe.config
+C:\Users\salsh\OneDrive\Documents\Visual Studio 2015\Projects\Nero System Information\Nero System Information\obj\x86\Debug\Interop.SHDocVw.dll
+C:\Users\salsh\OneDrive\Documents\Visual Studio 2015\Projects\Nero System Information\Nero System Information\obj\x86\Debug\AxInterop.SHDocVw.dll
+C:\Users\salsh\OneDrive\Documents\Visual Studio 2015\Projects\Nero System Information\Nero System Information\obj\x86\Debug\Nero System Information.csproj.ResolveComReference.cache
+C:\Users\salsh\OneDrive\Documents\Visual Studio 2015\Projects\Nero System Information\Nero System Information\obj\x86\Debug\Nero System Information.exe
+C:\Users\salsh\OneDrive\Documents\Visual Studio 2015\Projects\Nero System Information\Nero System Information\obj\x86\Debug\Nero System Information.pdb
+C:\Users\salsh\OneDrive\Documents\Visual Studio 2015\Projects\Nero System Information\Nero System Information\bin\Debug\Nero System Information.exe
+C:\Users\salsh\OneDrive\Documents\Visual Studio 2015\Projects\Nero System Information\Nero System Information\bin\Debug\Nero System Information.pdb
+C:\Users\salsh\OneDrive\Documents\Visual Studio 2015\Projects\Nero System Information\Nero System Information\bin\Debug\DevComponents.DotNetBar2.dll
+C:\Users\salsh\OneDrive\Documents\Visual Studio 2015\Projects\Nero System Information\Nero System Information\bin\Debug\DevComponents.DotNetBar2.xml
+C:\Users\salsh\OneDrive\Documents\Visual Studio 2015\Projects\Nero System Information\Nero System Information\bin\Debug\Interop.SHDocVw.dll
+C:\Users\salsh\OneDrive\Documents\Visual Studio 2015\Projects\Nero System Information\Nero System Information\bin\Debug\AxInterop.SHDocVw.dll
+C:\Users\salsh\OneDrive\Documents\Visual Studio 2015\Projects\Nero System Information\Nero System Information\obj\x86\Debug\Nero System Information.csprojResolveAssemblyReference.cache
+C:\Users\salsh\OneDrive\Documents\Visual Studio 2015\Projects\Nero System Information\Nero System Information\obj\x86\Debug\Nero_System_Information.Main.resources
+C:\Users\salsh\OneDrive\Documents\Visual Studio 2015\Projects\Nero System Information\Nero System Information\obj\x86\Debug\Nero_System_Information.Properties.Resources.resources
+C:\Users\salsh\OneDrive\Documents\Visual Studio 2015\Projects\Nero System Information\Nero System Information\obj\x86\Debug\Nero System Information.csproj.GenerateResource.Cache

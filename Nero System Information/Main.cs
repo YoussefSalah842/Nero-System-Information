@@ -30,8 +30,7 @@ namespace Nero_System_Information
         private void Main_Load(object sender, EventArgs e)
         {
 
-            timer1.Start();
-
+            GetBiosInfo();
             GetGPUInfo();
 
             var cpu =
@@ -55,6 +54,7 @@ new ManagementObjectSearcher("select * from Win32_Processor")
             textBox6.Text = System.Environment.SystemDirectory.ToString();
             textBox7.Text = System.Environment.Is64BitOperatingSystem.ToString();
             textBox8.Text = System.Environment.Is64BitProcess.ToString();
+            textBox9.Text = System.Environment.ProcessorCount.ToString();
             textBox10.Text = System.Environment.OSVersion.Platform.ToString();
             textBox14.Text = HardwareInfo.GetProcessorId();
             textBox16.Text = (string)cpu["ProcessorId"]; ;
@@ -67,10 +67,6 @@ new ManagementObjectSearcher("select * from Win32_Processor")
             textBox33.Text = GetUsedRAM();
             textBox29.Text = GetFreeRAM();
             DisplayScreenInfo();
-            UpdateBatteryInfo();
-
-            GetBiosInfo();
-            GetSystemInfo();
 
             int q = System.Environment.TickCount;
             int w = (q / 1000) / 60;
@@ -83,6 +79,8 @@ new ManagementObjectSearcher("select * from Win32_Processor")
             textBox12.Text = (string)Rkey.GetValue("ProcessorNameString");
 
             textBox15.Text = (string)Rkey.GetValue("ProcessorNameString");
+
+            textBox13.Text = System.Environment.WorkingSet.ToString();
 
             ManagementClass management2 = new ManagementClass("Win32_BIOS");
             ManagementObjectCollection managementobject2 = management2.GetInstances();
@@ -152,14 +150,6 @@ new ManagementObjectSearcher("select * from Win32_Processor")
 
             return productName;
 
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            float fcpu = pCPU.NextValue();
-            float fram = pRAM.NextValue();
-
-            chart1.Series["CPU"].Points.AddY(fcpu);
         }
 
         public static class ConverterExtension
@@ -338,39 +328,6 @@ new ManagementObjectSearcher("select * from Win32_Processor")
 
         }
 
-        private void UpdateBatteryInfo()
-        {
-            try
-            {
-
-                PowerStatus powerStatus = SystemInformation.PowerStatus;
-                int batteryPercentage = (int)(powerStatus.BatteryLifePercent * 100);
-
-
-                progressBar2.Value = batteryPercentage;
-
-
-                labelBatteryPercentage.Text = batteryPercentage.ToString() + "%";
-
-
-                if (powerStatus.PowerLineStatus == PowerLineStatus.Online)
-                {
-                    labelChargingStatus.Text = "Charging";
-                }
-                else
-                {
-                    labelChargingStatus.Text = "Not Charging";
-                }
-
-
-                labelPowerScheme.Text = GetPowerScheme();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-        }
-
         private string GetPowerScheme()
         {
             PowerStatus powerStatus = SystemInformation.PowerStatus;
@@ -441,78 +398,9 @@ new ManagementObjectSearcher("select * from Win32_Processor")
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_BIOS");
                 foreach (ManagementObject obj in searcher.Get())
                 {
-                    lblBiosVersion.Text = "" + (obj["SMBIOSBIOSVersion"] != null ? obj["SMBIOSBIOSVersion"].ToString() : "N/A");
-                    lblManufacturer.Text = "" + (obj["Manufacturer"] != null ? obj["Manufacturer"].ToString() : "N/A");
-                    lblReleaseDate.Text = "" + (obj["ReleaseDate"] != null ? ManagementDateTimeConverter.ToDateTime(obj["ReleaseDate"].ToString()).ToShortDateString() : "N/A");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-        }
-
-                private void GetSystemInfo()
-        {
-            try
-            {
-                
-                foreach (ManagementObject obj in new ManagementObjectSearcher("SELECT Name FROM Win32_ComputerSystem").Get())
-                {
-                    lblComputerName.Text = "" + (obj["Name"] != null ? obj["Name"].ToString() : "N/A");
-                }
-
-                
-                foreach (ManagementObject obj in new ManagementObjectSearcher("SELECT Model FROM Win32_ComputerSystem").Get())
-                {
-                    lblModel.Text = "" + (obj["Model"] != null ? obj["Model"].ToString() : "N/A");
-                }
-
-               
-                foreach (ManagementObject obj in new ManagementObjectSearcher("SELECT NumberOfCores FROM Win32_Processor").Get())
-                {
-                    lblCores.Text = "" + (obj["NumberOfCores"] != null ? obj["NumberOfCores"].ToString() : "N/A");
-                }
-
-                
-                foreach (ManagementObject obj in new ManagementObjectSearcher("SELECT MaxClockSpeed FROM Win32_Processor").Get())
-                {
-                    lblClockSpeed.Text = "" + (obj["MaxClockSpeed"] != null ? obj["MaxClockSpeed"].ToString() + " MHz" : "N/A");
-                }
-
-                
-                foreach (ManagementObject obj in new ManagementObjectSearcher("SELECT Size FROM Win32_DiskDrive").Get())
-                {
-                    if (obj["Size"] != null)
-                    {
-                        double sizeInGB = Math.Round(Convert.ToDouble(obj["Size"]) / (1024 * 1024 * 1024), 2);
-                        lblDiskSize.Text = " " + sizeInGB + " GB";
-                    }
-                    else
-                    {
-                        lblDiskSize.Text = "";
-                    }
-                }
-
-               
-                foreach (ManagementObject obj in new ManagementObjectSearcher("SELECT MediaType FROM Win32_DiskDrive").Get())
-                {
-                    lblDiskType.Text = "" + (obj["MediaType"] != null ? obj["MediaType"].ToString() : "N/A");
-                }
-
-                
-                foreach (ManagementObject obj in new ManagementObjectSearcher("SELECT Name FROM Win32_NetworkAdapter WHERE NetEnabled = true").Get())
-                {
-                    lblNetworkAdapter.Text = "Network Adapter: " + (obj["Name"] != null ? obj["Name"].ToString() : "N/A");
-                    break; 
-                }
-
-                
-                foreach (ManagementObject obj in new ManagementObjectSearcher("SELECT * FROM Win32_NetworkAdapterConfiguration WHERE IPEnabled = true").Get())
-                {
-                    string[] ipAddresses = (string[])obj["IPAddress"];
-                    lblIPAddress.Text = "" + (ipAddresses != null && ipAddresses.Length > 0 ? ipAddresses[0] : "N/A");
-                    break; 
+                    lblBiosVersion.Text = "BIOS Version: " + (obj["SMBIOSBIOSVersion"] != null ? obj["SMBIOSBIOSVersion"].ToString() : "N/A");
+                    lblManufacturer.Text = "Manufacturer: " + (obj["Manufacturer"] != null ? obj["Manufacturer"].ToString() : "N/A");
+                    lblReleaseDate.Text = "Release Date: " + (obj["ReleaseDate"] != null ? obj["ReleaseDate"].ToString() : "N/A");
                 }
             }
             catch (Exception ex)
